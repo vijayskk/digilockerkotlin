@@ -1,5 +1,6 @@
 package com.example.digi_locker
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import java.io.File
+import java.lang.Exception
 
 class ViewActivity : AppCompatActivity() {
     val REQ_CODE = 1
@@ -18,6 +22,8 @@ class ViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_view)
         var title = findViewById<TextView>(R.id.title)
         title.text = AppConstants().sections[curr!!]
+
+
     }
     fun onBackPressed(view:View){
         finish()
@@ -40,5 +46,7 @@ class ViewActivity : AppCompatActivity() {
     }
     fun saveImageAndReload(){
         findViewById<ImageView>(R.id.image1).setImageURI(selectedFile)
+        findViewById<TextView>(R.id.title).text = selectedFile.toString()
+
     }
 }
