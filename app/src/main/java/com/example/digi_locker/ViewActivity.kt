@@ -31,7 +31,7 @@ class ViewActivity : AppCompatActivity() {
             val imageFullPath: String = file.getAbsolutePath()
             findViewById<ImageView>(R.id.image1).setImageURI(Uri.parse(imageFullPath))
         }else{
-            findViewById<ImageView>(R.id.image1).setImageResource(R.drawable.ic_launcher_background)
+            findViewById<ImageView>(R.id.image1).setImageResource(R.drawable.place)
         }
 
 
